@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#b4c7e7"/>
+  <circle cx="320" cy="80" r="34" fill="#ffd966"/>
+  <rect y="290" width="400" height="110" fill="#6aa84f"/>
+  <rect x="90" y="170" width="220" height="140" fill="#ead1dc"/>
+  <polygon points="70,175 200,85 330,175" fill="#5b5b5b"/>
+  <rect x="175" y="230" width="50" height="80" fill="#6b4226"/>
+  <rect x="115" y="200" width="45" height="40" fill="#cfe8ff" stroke="#ffffff" stroke-width="4"/>
+  <rect x="240" y="200" width="45" height="40" fill="#cfe8ff" stroke="#ffffff" stroke-width="4"/>
+  <text x="200" y="370" font-family="sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">Casa terminada</text>
+</svg>
