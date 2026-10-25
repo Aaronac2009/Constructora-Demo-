@@ -21,17 +21,17 @@ const roles = [
 
 // estado 0 = debe cambiar la contraseña en el próximo inicio de sesión.
 const usuarios = [
-  { id: 1, nombre: "Ana", apellido1: "Rodríguez", apellido2: "Mora", correo_electronico: "admin@ipsum.demo", rol_id: 2, activated: 1, estado: 1 },
-  { id: 2, nombre: "Carlos", apellido1: "Jiménez", apellido2: "Solano", correo_electronico: "carlos@ipsum.demo", rol_id: 3, activated: 1, estado: 1 },
-  { id: 3, nombre: "María", apellido1: "Fernández", apellido2: "Rojas", correo_electronico: "maria@ipsum.demo", rol_id: 7, activated: 1, estado: 1 },
-  { id: 4, nombre: "Luis", apellido1: "Vargas", apellido2: "Chaves", correo_electronico: "luis@ipsum.demo", rol_id: 4, activated: 1, estado: 1 },
-  { id: 5, nombre: "Sofía", apellido1: "Castro", apellido2: "Méndez", correo_electronico: "sofia@ipsum.demo", rol_id: 9, activated: 1, estado: 1 },
-  { id: 6, nombre: "Jorge", apellido1: "Solís", apellido2: "Ureña", correo_electronico: "jorge@ipsum.demo", rol_id: 5, activated: 1, estado: 1 },
-  { id: 7, nombre: "Daniela", apellido1: "Quesada", apellido2: "Arias", correo_electronico: "daniela@ipsum.demo", rol_id: 3, activated: 1, estado: 1 },
-  { id: 8, nombre: "Pedro", apellido1: "Navarro", apellido2: "Brenes", correo_electronico: "nuevo@ipsum.demo", rol_id: 3, activated: 1, estado: 0 },
-  { id: 9, nombre: "Rebeca", apellido1: "Salas", apellido2: "Vindas", correo_electronico: "rebeca@ipsum.demo", rol_id: 10, activated: 1, estado: 1 },
-  { id: 10, nombre: "Óscar", apellido1: "Pérez", apellido2: "León", correo_electronico: "oscar@ipsum.demo", rol_id: 4, activated: 0, estado: 1 },
-].map((u) => ({ ...u, password: DEMO_PASSWORD }));
+  { id: 1, nombre: "Usuario 1", apellido1: "Apellido", apellido2: "Apellido", correo_electronico: "admin@constructora.com", rol_id: 2, activated: 1, estado: 1 },
+  { id: 2, nombre: "Analista 1", apellido1: "Apellido", apellido2: "Apellido", correo_electronico: "analista1@constructora.com", rol_id: 3, activated: 1, estado: 1 },
+  { id: 3, nombre: "Analista Adm.", apellido1: "Apellido", apellido2: "Apellido", correo_electronico: "analistadm@constructora.com", rol_id: 7, activated: 1, estado: 1 },
+  { id: 4, nombre: "Arquitecto 1", apellido1: "Apellido", apellido2: "Apellido", correo_electronico: "arquitecto1@constructora.com", rol_id: 4, activated: 1, estado: 1 },
+  { id: 5, nombre: "Arquitecto Adm", apellido1: "Apellido", apellido2: "Apellido", correo_electronico: "arquitectoadm@constructora.com", rol_id: 9, activated: 1, estado: 1 },
+  { id: 6, nombre: "Ingeniero", apellido1: "Apellido", apellido2: "Apellido", correo_electronico: "ingeniero@constructora.com", rol_id: 5, activated: 1, estado: 1 },
+  { id: 7, nombre: "Analista 2", apellido1: "Apellido", apellido2: "Apellido", correo_electronico: "analista2@constructora.com", rol_id: 3, activated: 1, estado: 1 },
+  { id: 8, nombre: "Analista 3", apellido1: "Apellido", apellido2: "Apellido", correo_electronico: "analista3@constructora.com", rol_id: 3, activated: 1, estado: 0 },
+  { id: 9, nombre: "Ingeniero Adm", apellido1: "Apellido", apellido2: "Apellido", correo_electronico: "ingenieroadm@constructora.com", rol_id: 10, activated: 1, estado: 1 },
+  { id: 10, nombre: "Arquitecto 2", apellido1: "Apellido", apellido2: "Apellido", correo_electronico: "arquitecto2@constructora.com", rol_id: 4, activated: 0, estado: 1 },
+].map(u => ({ ...u, password: DEMO_PASSWORD }));
 
 const etapas = [
   "Recepción de documentos",
@@ -80,54 +80,225 @@ const variantes_bono = [
   { id: 7, nombre: "Lote Propio", tipo_bono_id: 4, activated: 1 },
   { id: 8, nombre: "Mejoras", tipo_bono_id: 5, activated: 1 },
 ];
-
 const grupos_proyectos = [
-  { id: 1, nombre: "Grupo Norte 2026", descripcion: "Proyectos de la zona norte" },
-  { id: 2, nombre: "Feria de Vivienda", descripcion: "Casos captados en la feria de agosto" },
-  { id: 3, nombre: "Referidos", descripcion: "Familias referidas por otros clientes" },
+  {
+    id: 1,
+    nombre: "Grupo de Proyectos A",
+    descripcion: "Proyectos generales de ejemplo",
+  },
+  {
+    id: 2,
+    nombre: "Feria de Proyectos",
+    descripcion: "Casos registrados durante una feria",
+  },
+  {
+    id: 3,
+    nombre: "Referencias de Clientes",
+    descripcion: "Casos recibidos mediante referencias",
+  },
 ];
 
 const entidades = [
-  { id: 1, nombre: "Mutual Central", direccion: "San José centro", telefono: "2222-1000", correo_electronico: "vivienda@mutualcentral.demo" },
-  { id: 2, nombre: "Banco Comunal", direccion: "Alajuela, frente al parque", telefono: "2440-2000", correo_electronico: "bonos@bancocomunal.demo" },
-  { id: 3, nombre: "Cooperativa del Sur", direccion: "Pérez Zeledón", telefono: "2771-3000", correo_electronico: "info@coopesur.demo" },
-  { id: 4, nombre: "Financiera Horizonte", direccion: "Heredia, Barreal", telefono: "2260-4000", correo_electronico: "contacto@horizonte.demo" },
+  {
+    id: 1,
+    nombre: "Entidad Financiera A",
+    direccion: "Dirección de ejemplo, San José",
+    telefono: "0000-0001",
+    correo_electronico: "contacto@entidad-a.example",
+  },
+  {
+    id: 2,
+    nombre: "Entidad Financiera B",
+    direccion: "Dirección de ejemplo, Alajuela",
+    telefono: "0000-0002",
+    correo_electronico: "contacto@entidad-b.example",
+  },
+  {
+    id: 3,
+    nombre: "Cooperativa de Ejemplo",
+    direccion: "Dirección de ejemplo, Cartago",
+    telefono: "0000-0003",
+    correo_electronico: "contacto@cooperativa.example",
+  },
+  {
+    id: 4,
+    nombre: "Financiera de Ejemplo",
+    direccion: "Dirección de ejemplo, Heredia",
+    telefono: "0000-0004",
+    correo_electronico: "contacto@financiera.example",
+  },
 ];
 
 const centros_negocios = [
-  { id: 1, entidad_id: 1, nombre: "Centro de Negocios Paseo Colón", direccion: "Paseo Colón", telefono: "2222-1010", correo_electronico: "paseocolon@mutualcentral.demo" },
-  { id: 2, entidad_id: 1, nombre: "Centro de Negocios Cartago", direccion: "Cartago centro", telefono: "2551-1020", correo_electronico: "cartago@mutualcentral.demo" },
-  { id: 3, entidad_id: 2, nombre: "Sucursal Alajuela", direccion: "Alajuela centro", telefono: "2440-2010", correo_electronico: "alajuela@bancocomunal.demo" },
-  { id: 4, entidad_id: 2, nombre: "Sucursal San Carlos", direccion: "Ciudad Quesada", telefono: "2460-2020", correo_electronico: "sancarlos@bancocomunal.demo" },
-  { id: 5, entidad_id: 3, nombre: "Oficina San Isidro", direccion: "San Isidro de El General", telefono: "2771-3010", correo_electronico: "sanisidro@coopesur.demo" },
-  { id: 6, entidad_id: 4, nombre: "Oficina Heredia", direccion: "Heredia centro", telefono: "2260-4010", correo_electronico: "heredia@horizonte.demo" },
+  {
+    id: 1,
+    entidad_id: 1,
+    nombre: "Centro de Negocios Principal",
+    direccion: "Dirección de ejemplo, San José",
+    telefono: "0000-0101",
+    correo_electronico: "principal@entidad-a.example",
+  },
+  {
+    id: 2,
+    entidad_id: 1,
+    nombre: "Centro de Negocios Regional",
+    direccion: "Dirección de ejemplo, Cartago",
+    telefono: "0000-0102",
+    correo_electronico: "regional@entidad-a.example",
+  },
+  {
+    id: 3,
+    entidad_id: 2,
+    nombre: "Sucursal Central",
+    direccion: "Dirección de ejemplo, Alajuela",
+    telefono: "0000-0201",
+    correo_electronico: "central@entidad-b.example",
+  },
+  {
+    id: 4,
+    entidad_id: 2,
+    nombre: "Sucursal Regional",
+    direccion: "Dirección de ejemplo, San Carlos",
+    telefono: "0000-0202",
+    correo_electronico: "regional@entidad-b.example",
+  },
+  {
+    id: 5,
+    entidad_id: 3,
+    nombre: "Oficina Principal",
+    direccion: "Dirección de ejemplo, Pérez Zeledón",
+    telefono: "0000-0301",
+    correo_electronico: "principal@cooperativa.example",
+  },
+  {
+    id: 6,
+    entidad_id: 4,
+    nombre: "Oficina Regional",
+    direccion: "Dirección de ejemplo, Heredia",
+    telefono: "0000-0401",
+    correo_electronico: "regional@financiera.example",
+  },
+  
 ];
-
-const analistas_entidades = [
-  { id: 1, entidad_id: 1, nombre: "Gabriela", apellido1: "Montero", apellido2: "Sáenz", correo_electronico: "gmontero@mutualcentral.demo", telefono: "8811-2233" },
-  { id: 2, entidad_id: 1, nombre: "Esteban", apellido1: "Calderón", apellido2: "Ruiz", correo_electronico: "ecalderon@mutualcentral.demo", telefono: "8822-3344" },
-  { id: 3, entidad_id: 2, nombre: "Patricia", apellido1: "Hidalgo", apellido2: "Vega", correo_electronico: "phidalgo@bancocomunal.demo", telefono: "8833-4455" },
-  { id: 4, entidad_id: 3, nombre: "Ricardo", apellido1: "Umaña", apellido2: "Porras", correo_electronico: "rumana@coopesur.demo", telefono: "8844-5566" },
-  { id: 5, entidad_id: 4, nombre: "Lucía", apellido1: "Esquivel", apellido2: "Camacho", correo_electronico: "lesquivel@horizonte.demo", telefono: "8855-6677" },
-];
-
 // La columna real de constructores es "Nombre" (ver const.js); se guarda
 // también "nombre" porque así lo devuelve /formValues.
+const analistas_entidades = [
+  {
+    id: 1,
+    entidad_id: 1,
+    nombre: "Alex",
+    apellido1: "Ejemplo",
+    apellido2: "Uno",
+    correo_electronico: "analista1@entidad-a.example",
+    telefono: "0000-1001",
+  },
+  {
+    id: 2,
+    entidad_id: 1,
+    nombre: "Sam",
+    apellido1: "Ejemplo",
+    apellido2: "Dos",
+    correo_electronico: "analista2@entidad-a.example",
+    telefono: "0000-1002",
+  },
+  {
+    id: 3,
+    entidad_id: 2,
+    nombre: "Taylor",
+    apellido1: "Ejemplo",
+    apellido2: "Tres",
+    correo_electronico: "analista1@entidad-b.example",
+    telefono: "0000-2001",
+  },
+  {
+    id: 4,
+    entidad_id: 3,
+    nombre: "Jordan",
+    apellido1: "Ejemplo",
+    apellido2: "Cuatro",
+    correo_electronico: "analista1@cooperativa.example",
+    telefono: "0000-3001",
+  },
+  {
+    id: 5,
+    entidad_id: 4,
+    nombre: "Casey",
+    apellido1: "Ejemplo",
+    apellido2: "Cinco",
+    correo_electronico: "analista1@financiera.example",
+    telefono: "0000-4001",
+  },
+];
+
+// Se conservan "nombre" y "Nombre" por compatibilidad con la aplicación.
 const constructores = [
-  { id: 1, nombre: "Constructora", Nombre: "Constructora", apellido1: "Hermanos Araya", apellido2: "", telefono: "2290-1111", correo_electronico: "obras@hnosaraya.demo" },
-  { id: 2, nombre: "Manuel", Nombre: "Manuel", apellido1: "Zúñiga", apellido2: "Badilla", telefono: "8701-2222", correo_electronico: "mzuniga@obras.demo" },
-  { id: 3, nombre: "Edificaciones", Nombre: "Edificaciones", apellido1: "del Valle", apellido2: "", telefono: "2250-3333", correo_electronico: "info@edvalle.demo" },
+  {
+    id: 1,
+    nombre: "Constructora",
+    Nombre: "Constructora",
+    apellido1: "Empresa de Ejemplo A",
+    apellido2: "",
+    telefono: "0000-5001",
+    correo_electronico: "constructora-a@ejemplo.example",
+  },
+  {
+    id: 2,
+    nombre: "Alex",
+    Nombre: "Alex",
+    apellido1: "Ejemplo",
+    apellido2: "Constructor",
+    telefono: "0000-5002",
+    correo_electronico: "constructor-b@ejemplo.example",
+  },
+  {
+    id: 3,
+    nombre: "Edificaciones",
+    Nombre: "Edificaciones",
+    apellido1: "Empresa de Ejemplo C",
+    apellido2: "",
+    telefono: "0000-5003",
+    correo_electronico: "edificaciones-c@ejemplo.example",
+  },
 ];
 
 const fiscales = [
-  { id: 1, nombre: "Rodrigo", apellido1: "Alfaro", apellido2: "Cordero", telefono: "8890-1234", correo_electronico: "ralfaro@fiscal.demo" },
-  { id: 2, nombre: "Silvia", apellido1: "Murillo", apellido2: "Ramírez", telefono: "8890-5678", correo_electronico: "smurillo@fiscal.demo" },
+  {
+    id: 1,
+    nombre: "Morgan",
+    apellido1: "Ejemplo",
+    apellido2: "Seis",
+    telefono: "0000-6001",
+    correo_electronico: "fiscal1@ejemplo.example",
+  },
+  {
+    id: 2,
+    nombre: "Riley",
+    apellido1: "Ejemplo",
+    apellido2: "Siete",
+    telefono: "0000-6002",
+    correo_electronico: "fiscal2@ejemplo.example",
+  },
 ];
 
 const promotores_ipsum = [
-  { id: 1, nombre: "Andrea", apellido1: "Barrantes", apellido2: "Soto" },
-  { id: 2, nombre: "Felipe", apellido1: "Rojas", apellido2: "Campos" },
-  { id: 3, nombre: "Karla", apellido1: "Villalobos", apellido2: "Mora" },
+  {
+    id: 1,
+    nombre: "Promotor",
+    apellido1: "Ejemplo",
+    apellido2: "Uno",
+  },
+  {
+    id: 2,
+    nombre: "Promotor",
+    apellido1: "Ejemplo",
+    apellido2: "Dos",
+  },
+  {
+    id: 3,
+    nombre: "Promotor",
+    apellido1: "Ejemplo",
+    apellido2: "Tres",
+  },
 ];
 
 const tipos_propietario = [

@@ -149,9 +149,10 @@ function sortByDateDesc(list) {
 
 const routes = [
   // Autenticación
+
   ["POST", "/login", ({ body }) => {
     const user = getDb().usuarios.find(
-      (u) => u.correo_electronico.toLowerCase() === String(body.email || "").trim().toLowerCase(),
+      u => u.correo_electronico.toLowerCase() === String(body.email || "").trim().toLowerCase(),
     );
     if (!user || user.activated == 0 || user.password !== body.password) {
       return fail(401, "Usuario o contraseña incorrectos");

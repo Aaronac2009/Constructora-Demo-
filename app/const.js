@@ -213,7 +213,7 @@ export const modifyData = [
     ],
   },
   {
-    label: "Promotor Ipsum",
+    label: "Promotor",
     slug: "promotor-ipsum",
     table: "promotores_ipsum",
     lingered: "",

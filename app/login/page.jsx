@@ -35,7 +35,7 @@ export default async function Login({ searchParams }) {
             proporción para que next/image no lo estire, y el className
             controla el tamaño real de forma responsive */}
         <Image
-          src={"/logo.svg"}
+          src={"/logo-generico.png"}
           width={350}
           height={101}
           alt="Logo"
@@ -83,11 +83,11 @@ export default async function Login({ searchParams }) {
           <p>
             Contraseña de todos los usuarios: <code>{DEMO_PASSWORD}</code>
           </p>
-          <ul className="list-disc pl-5">
-            <li><code>admin@ipsum.demo</code> (Administrador)</li>
-            <li><code>carlos@ipsum.demo</code> (Analista)</li>
-            <li><code>luis@ipsum.demo</code> (Arquitecto)</li>
-            <li><code>nuevo@ipsum.demo</code> (debe cambiar contraseña)</li>
+          <ul className="list-disc">
+            <li><code>admin@constructora.com</code> (Administrador)</li>
+            <li><code>analista1@constructora.com</code> (Analista)</li>
+            <li><code>arquitecto1@constructora.com</code> (Arquitecto)</li>
+            <li><code>analista3@constructora.com</code> (debe cambiar contraseña)</li>
           </ul>
         </div>
 
